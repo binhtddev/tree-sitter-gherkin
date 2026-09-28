@@ -79,7 +79,6 @@ static const DialectSize ${name}_prefix_sizes[] = {${dialectTrie.prefixSizes.joi
 static const DialectSize ${name}_i_p1s[] = {${dialectTrie.iP1s.join(",")}};
 static const DialectSize ${name}_sizes[] = {${dialectTrie.sizes.join(",")}};
 static const DialectValue ${name}_values[] = {${dialectTrie.values.join(",")}};
-static const DialectSize ${name}_root_size = ${dialectTrie.rootSize};
 
 static const Dialect ${name}_dialect = {${[
     `${name}_prefix_raw`,
@@ -88,7 +87,7 @@ static const Dialect ${name}_dialect = {${[
     `${name}_i_p1s`,
     `${name}_sizes`,
     `${name}_values`,
-    `${name}_root_size`,
+    dialectTrie.rootSize,
   ].join(", ")}};
 `.trim();
 }
@@ -103,7 +102,6 @@ static const LanguageSize ${name}_prefix_sizes[] = {${languageTrie.prefixSizes.j
 static const LanguageSize ${name}_i_p1s[] = {${languageTrie.iP1s.join(",")}};
 static const LanguageSize ${name}_sizes[] = {${languageTrie.sizes.join(",")}};
 static const LanguageValue ${name}_values[] = {${languageTrie.values.join(",")}};
-static const LanguageSize ${name}_root_size = ${languageTrie.rootSize};
 
 static const Language ${exportName} = {${[
     `${name}_prefix_raw`,
@@ -112,7 +110,7 @@ static const Language ${exportName} = {${[
     `${name}_i_p1s`,
     `${name}_sizes`,
     `${name}_values`,
-    `${name}_root_size`,
+    languageTrie.rootSize,
   ].join(", ")}};
 `.trim();
 }
